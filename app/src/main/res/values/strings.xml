@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CV Toolkit</string>
+    <string name="main_title">CV Toolkit</string>
+    <string name="main_subtitle">Choose a tool to get started</string>
+    
+    <!-- Features -->
+    <string name="ip_lookup_title">IP Lookup</string>
+    <string name="ip_lookup_desc">Detailed IP Information</string>
+    <string name="network_stress_test_title">Network Test</string>
+    <string name="network_stress_test_desc">Performance Analysis</string>
+    <string name="drm_info_title">DRM Info</string>
+    <string name="drm_info_desc">Device Capabilities</string>
+    <string name="device_info_title">Device Info</string>
+    <string name="device_info_desc">System Information</string>
+    
+    <!-- IP Lookup -->
+    <string name="lookup_my_ip">Lookup My IP</string>
+    <string name="lookup_custom_ip">Lookup Custom IP</string>
+    <string name="enter_ip_address">Enter IP Address</string>
+    <string name="lookup">Lookup</string>
+    <string name="loading">Loading…</string>
+    <string name="error_occurred">An error occurred</string>
+    <string name="back">Back</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="feature_in_development">This feature is under development</string>
+</resources>
