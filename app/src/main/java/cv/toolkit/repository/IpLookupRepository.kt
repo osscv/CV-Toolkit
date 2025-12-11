@@ -48,7 +48,7 @@ class IpLookupRepository {
 
     suspend fun getMyIpInfo(): Result<IpInfo> {
         return try {
-            val response = api.getMyIpInfo(hostname = true, apiKey = IpRegistryApi.API_KEY)
+            val response = api.getMyIpInfo(apiKey = IpRegistryApi.API_KEY)
             if (response.isSuccessful && response.body() != null) {
                 Result.success(response.body()!!)
             } else {
@@ -58,10 +58,10 @@ class IpLookupRepository {
             Result.failure(e)
         }
     }
-    
+
     suspend fun getIpInfo(ip: String): Result<IpInfo> {
         return try {
-            val response = api.getIpInfo(ip = ip, hostname = true, apiKey = IpRegistryApi.API_KEY)
+            val response = api.getIpInfo(apiKey = IpRegistryApi.API_KEY, ip = ip)
             if (response.isSuccessful && response.body() != null) {
                 Result.success(response.body()!!)
             } else {

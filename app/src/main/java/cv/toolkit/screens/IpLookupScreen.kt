@@ -1,5 +1,6 @@
 package cv.toolkit.screens
 
+import android.app.Activity
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -21,6 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import cv.toolkit.R
+import cv.toolkit.ads.AdMobManager
+import cv.toolkit.ads.BannerAd
 import cv.toolkit.data.IpHistoryEntry
 import cv.toolkit.data.IpHistoryManager
 import cv.toolkit.data.IpInfo
@@ -49,6 +52,7 @@ fun formatTimeAgo(timestamp: Long, now: Long): String {
 @Composable
 fun IpLookupScreen(navController: NavController) {
     val context = LocalContext.current
+    val activity = context as? Activity
     val repository = remember { IpLookupRepository() }
     val historyManager = remember { IpHistoryManager(context) }
     val scope = rememberCoroutineScope()
@@ -149,8 +153,12 @@ fun IpLookupScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .verticalScroll(rememberScrollState())
         ) {
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .verticalScroll(rememberScrollState())
+            ) {
             // Search Card
             Card(
                 modifier = Modifier.fillMaxWidth().padding(12.dp),
@@ -183,6 +191,17 @@ fun IpLookupScreen(navController: NavController) {
                                                 customIpInfo = it
                                                 historyManager.addEntry(it)
                                                 lookupHistory = historyManager.getHistory()
+                                                // Track usage for interstitial ad (every 3 lookups)
+                                                activity?.let { act ->
+                                                    AdMobManager.trackIpLookupUsage(act)
+                                                    // Track for rewarded ad (every 12 lookups)
+                                                    AdMobManager.trackIpLookupForReward(act,
+                                                        onShowReward = {
+                                                            AdMobManager.showRewardedAd(act, onRewarded = {})
+                                                        },
+                                                        onSkip = {}
+                                                    )
+                                                }
                                             },
                                             onFailure = { errorMessage = it.message }
                                         )
@@ -319,6 +338,8 @@ fun IpLookupScreen(navController: NavController) {
                     modifier = Modifier.clickable { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://data.dkly.net"))) }
                 )
             }
+            }
+            BannerAd(modifier = Modifier.fillMaxWidth())
         }
 
         // Info Dialog

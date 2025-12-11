@@ -2,17 +2,55 @@
     <string name="app_name">CV Toolkit</string>
     <string name="main_title">CV Toolkit</string>
     <string name="main_subtitle">Choose a tool to get started</string>
-    
+
     <!-- Features -->
     <string name="ip_lookup_title">IP Lookup</string>
     <string name="ip_lookup_desc">Detailed IP Information</string>
     <string name="network_stress_test_title">Network Test</string>
     <string name="network_stress_test_desc">Performance Analysis</string>
-    <string name="drm_info_title">DRM Info</string>
-    <string name="drm_info_desc">Device Capabilities</string>
+    <string name="drm_info_title">DRM &amp; Codecs</string>
+    <string name="drm_info_desc">DRM, Decoders &amp; Formats</string>
     <string name="device_info_title">Device Info</string>
     <string name="device_info_desc">System Information</string>
-    
+
+    <!-- Network Tools -->
+    <string name="speed_test_title">Speed Test</string>
+    <string name="speed_test_desc">Test Download/Upload Speed</string>
+    <string name="network_scan_title">Device Discovery</string>
+    <string name="network_scan_desc">Scan Devices on Network</string>
+    <string name="dns_lookup_title">DNS Lookup</string>
+    <string name="dns_lookup_desc">A, AAAA, CNAME Records</string>
+    <string name="ping_test_title">Ping Test</string>
+    <string name="ping_test_desc">Test Host Connectivity</string>
+    <string name="port_scan_title">Port Scanning</string>
+    <string name="port_scan_desc">Scan Open Ports</string>
+    <string name="traceroute_title">Traceroute</string>
+    <string name="traceroute_desc">Trace Network Path</string>
+    <string name="subnet_calc_title">Subnet Calculator</string>
+    <string name="subnet_calc_desc">CIDR, Network Range, Hosts</string>
+    <string name="ssl_checker_title">SSL/TLS Checker</string>
+    <string name="ssl_checker_desc">Certificate Details &amp; Chain</string>
+
+    <!-- Utility Tools -->
+    <string name="ip_calc_title">IP Calculator</string>
+    <string name="ip_calc_desc">Convert IP Formats</string>
+    <string name="base64_title">Base64 Tool</string>
+    <string name="base64_desc">Encode/Decode Base64</string>
+    <string name="url_encoder_title">URL Encoder</string>
+    <string name="url_encoder_desc">Encode/Decode URLs</string>
+    <string name="binary_converter_title">Base Converter</string>
+    <string name="binary_converter_desc">Text to Binary/Hex/Oct</string>
+    <string name="hash_generator_title">Hash Generator</string>
+    <string name="hash_generator_desc">MD5, SHA-1/256/512</string>
+    <string name="caesar_cipher_title">Caesar/ROT Cipher</string>
+    <string name="caesar_cipher_desc">ROT13, Caesar, ROT47</string>
+    <string name="morse_code_title">Morse Code</string>
+    <string name="morse_code_desc">Text to Morse &amp; Back</string>
+    <string name="hex_encoder_title">Hex Encoder</string>
+    <string name="hex_encoder_desc">Text to Hex &amp; Back</string>
+    <string name="ascii_converter_title">ASCII Converter</string>
+    <string name="ascii_converter_desc">Text to ASCII Values</string>
+
     <!-- IP Lookup -->
     <string name="lookup_my_ip">Lookup My IP</string>
     <string name="lookup_custom_ip">Lookup Custom IP</string>
